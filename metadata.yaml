@@ -1,0 +1,30 @@
+_repo: Far-Away-and-Long-Ago-A-History-of-My-Early-Life_6093
+creator:
+  author:
+    agent_name: Hudson, W. H. (William Henry)
+    aliases:
+    - Hudson, William Henry
+    - Harford, Henry
+    birthdate: 1841
+    deathdate: 1922
+    gutenberg_agent_id: '484'
+    url: http://www.gutenberg.org/2009/agents/484
+    wikipedia: http://en.wikipedia.org/wiki/William_Henry_Hudson
+description: ''
+gutenberg_issued: '2004-07-01'
+gutenberg_type: Text
+identifiers:
+  gutenberg: '6093'
+language: en
+publisher: Project Gutenberg
+rights: Public domain in the USA.
+rights_url: http://creativecommons.org/about/pdm
+subjects:
+- !lcsh 'Hudson, W. H. (William Henry), 1841-1922 -- Childhood and youth'
+- !lcc 'QL'
+- !lcc 'PR'
+- !lcsh 'Authors, English -- 20th century -- Biography'
+- !lcsh 'Pampas (Argentina) -- Description and travel'
+- !lcsh 'Hudson, W. H. (William Henry), 1841-1922 -- Homes and haunts -- Argentina'
+title: 'Far Away and Long Ago: A History of My Early Life'
+url: http://www.gutenberg.org/ebooks/6093

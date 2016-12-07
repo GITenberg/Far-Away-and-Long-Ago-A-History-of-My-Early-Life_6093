@@ -1,0 +1,61 @@
+sudo: required
+dist: trusty
+language: ruby
+
+before_install:
+before_install:
+- gem install asciidoctor -v 1.5.2
+- gem install tilt
+- sudo pip install git+https://github.com/gitenberg-dev/gitberg
+- sudo pip install pillow
+- sudo pip install cssutils
+- sudo pip install docutils
+- sudo pip install roman
+- sudo pip install git+https://github.com/gitenberg-dev/pg-epubmaker
+script:
+- VERSION=`ruby -e "require 'yaml'; meta = YAML.load_file('metadata.yaml'); puts meta['_version'];"`
+- git clone https://github.com/gitenberg-dev/asciidoctor-htmlbook.git
+- sudo pip install -r asciidoctor-htmlbook/gitberg-machine/requirements.txt
+
+- /usr/bin/python -c "from gitenberg import travis; travis.build_epub()"
+- ebook-convert book.epub book.mobi
+- xvfb-run ebook-convert book.epub book.pdf
+branches:
+  only:
+  - master
+notifications:
+  webhooks:
+    urls:
+      - https://unglue.it/api/travisci/webhook
+    on_success: always
+    on_failure: never
+    on_start: never
+deploy:
+  skip_cleanup: true
+  provider: releases
+  api_key:
+    secure: Bz8FyY4q4MxnXs/qXfOIUw1ssumaCnS4EU7VaDcN11QezrI3EOXC34OTRav00+1dATDnGbTctcEzpATWpNedXcZgjlhN8Y2vLJhq5Nwawx/QWCE/9b+a6jh1EPR8xQlIsMVkFI4+OxNW8RHSGj4Lj7zm84Eqlvgh9lxtBAfd84WAWUXT7JGMSI8qUpdtaLxjYv6WiiAllG0oZoBJMkKNw4VYRWPyj1nalALHALpZ8/7Vdtscc0On0jie0tDs/q1Ij5RDo1AuQXybmNOAhbhRAzicNE4/pNXxd4qtnt06bidqPMz1ZFJi/dC+YGxnJBrUAFHuG7QFD6pPMSymy6iQXFvuo/5IFf0MxSN71r9gyver9EbbLbEKP5i/TM/h0jvnPeWfXHjJdhUqUGHAc66/lpC2ecBlmkq7d93CRUjL0xLSi4cHesABpyIFYZN5o609QCrBCYxKEJpQ0G7hOGntjsBwbwsQyVcrZLTr9XJp7YkJbq2mVXjkKaFYKrNPA3TDopVEGKYIpyDxmRKOT5jm83Yg5EgHYbPrtV+xhj8X0ShlV6G8b+vI99mQ+RrH7Mg6quEuD7iodY96cdQBSofuZrD06eZxvQXR0x4r2o6wDlGLQm2GnhEB1cnEhpl5z+bNSS++bI6jreAyz71sbJawEHyhTh/X06o+4sVied/E2x8=
+  file:
+    - book.epub
+    - book.mobi
+    - book.pdf
+  "on":
+    repo: GITenberg/Far-Away-and-Long-Ago-A-History-of-My-Early-Life_6093
+addons:
+  apt:
+    packages:
+    - xsltproc
+    - xvfb
+    - calibre
+    - python-pip
+    - git
+    - python-dev
+    - libjpeg-dev
+    - libpng-dev
+    - libfreetype6
+    - libfreetype6-dev
+    - zlib1g-dev
+    - python-lxml
+    - libxml2-dev
+    - libxslt1-dev
+    - tidy

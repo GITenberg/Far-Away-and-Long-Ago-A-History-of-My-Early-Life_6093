@@ -1,5 +1,8 @@
 _repo: Far-Away-and-Long-Ago-A-History-of-My-Early-Life_6093
-_version: 0.1.0
+_version: 0.2.0
+covers:
+- cover_type: generated
+  image_path: cover.png
 creator:
   author:
     agent_name: Hudson, W. H. (William Henry)
@@ -12,6 +15,8 @@ creator:
     url: http://www.gutenberg.org/2009/agents/484
     wikipedia: http://en.wikipedia.org/wiki/William_Henry_Hudson
 description: ''
+edition_identifiers:
+  edition_id: http://www.gutenberg.org/ebooks/6093#Far-Away-and-Long-Ago-A-History-of-My-Early-Life
 gutenberg_issued: '2004-07-01'
 gutenberg_type: Text
 identifiers:

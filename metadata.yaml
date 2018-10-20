@@ -1,5 +1,5 @@
 _repo: Far-Away-and-Long-Ago-A-History-of-My-Early-Life_6093
-_version: 0.2.0
+_version: 0.2.1
 covers:
 - cover_type: generated
   image_path: cover.png
@@ -32,5 +32,6 @@ subjects:
 - !lcsh 'Authors, English -- 20th century -- Biography'
 - !lcsh 'Pampas (Argentina) -- Description and travel'
 - !lcsh 'Hudson, W. H. (William Henry), 1841-1922 -- Homes and haunts -- Argentina'
+- GITenberg
 title: 'Far Away and Long Ago: A History of My Early Life'
 url: http://www.gutenberg.org/ebooks/6093
